@@ -37,7 +37,7 @@ The submission of a project is possible only by the deadline of November 30, 202
 
 #### Important Dates
 
-- Registration for the project evaluation will open on **November 3th**, and will close on **November 24th**.
+- Registration for the project evaluation will open on **November 3rd**, and will close on **November 24th**.
 - The deadline for submitting the final version of the project, i.e. the last GitHub commit, is **November 30th, 23:59 CEST** (Milan local time).
 - Project evaluations will start from **December 1st, 2025**.
 
