@@ -272,3 +272,12 @@ git pull origin main
 -   `README.md`: A markdown file that explains what your project is, how to install it, and how to use it. This is the first thing people see on GitHub.
 
 -   `LICENSE`: A file that specifies how others are allowed to use your code (e.g., MIT, Apache 2.0).
+
+## Useful Resources
+
+- [Git Installation](https://git-scm.com/downloads)
+- [Local Repository to GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)
+- [Create a Remote Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+- [Cloning a Remote Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- [Git in VSCode](https://code.visualstudio.com/docs/sourcecontrol/overview)
+- [Git in PyCharm](https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html#add-remote)
