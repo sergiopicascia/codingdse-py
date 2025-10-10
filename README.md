@@ -27,7 +27,7 @@ The submission of a project is possible only by the deadline of November 30, 202
 - Sep 29th, 16:30-18:00 - *Projects Introduction, Shell*
 - Oct 6th, 16:00-17:30 - *Git, Python Environments*
 - Oct 13th, 16:00-17:30 - *Project Organisation*
-- Oct 20th (ONLINE), 16:00-17:30 - *Data Input/Output*
+- Oct 20th, 16:00-17:30 - *Data Input/Output*
 - Oct 27th, 14:30-16:00 - *Data Manipulation*
 - Nov 3rd, 16:00-17:30 - *Scientific Computing*
 - Nov 10th, 16:00-17:30 - *Data Visualisation*
