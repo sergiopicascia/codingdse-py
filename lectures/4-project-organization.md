@@ -60,7 +60,7 @@ As your applications grow, managing related data and functions becomes complex. 
 *   **Class:** A blueprint for creating objects. For our library, we could define a `Book` class. It defines the properties and behaviors that all books will have.
 *   **Object (or Instance):** A specific entity created from a class. If `Book` is the blueprint, then a specific copy of "Dune" in the library is an object.
 *   **Attribute:** A piece of data associated with an object. An object of the `Book` class would have attributes like `title`, `author`, and `isbn`.
-*   **Method:** A function that belongs to an object and can operate on its data (attributes). A `Book` object might have a `check_out()` method or a `get_status()` method.
+*   **Method:** A function that belongs to an object and can operate on its data (attributes). A `Book` object might have a `loan_book()` method or a `return_book()` method.
 
 **Example (`models.py`):**
 
@@ -95,43 +95,7 @@ class Book:
 
 OOP allows you to model real-world concepts directly in your code, leading to a more intuitive and organized design.
 
-## The Python Style Guide (PEP 8)
-
-**PEP 8** is the official style guide for Python code. Adhering to it ensures your code is readable and consistent with the wider Python community. Key guidelines include:
-
-*   **Indentation:** Use 4 spaces per indentation level.
-*   **Line Length:** Keep lines under 80-99 characters.
-*   **Naming Conventions:**
-    *   `snake_case` for functions, methods, and variables (e.g., `find_book_by_title`).
-    *   `PascalCase` for classes (e.g., `class Book:`).
-    *   `UPPER_SNAKE_CASE` for constants (e.g., `MAX_BOOKS_PER_USER = 5`).
-*   **Whitespace:** Use whitespace judiciously to improve readability (e.g., around operators).
-
-### Automated Code Quality: Linters and Formatters
-
-Manually enforcing style rules is tedious. We can automate this process with two types of tools:
-
-*   **Linter (`flake8`):** Analyzes code to detect style violations and potential programming errors.
-*   **Formatter (`black`):** Automatically reformats your code to comply with a strict, opinionated style guide, ensuring consistency across the entire project.
-
-**Usage:**
-
-1.  Install them into your virtual environment:
-    ```bash
-    pip install flake8 black
-    ```
-2.  Check your project for style issues:
-    ```bash
-    flake8 .
-    ```
-3.  Automatically format your entire project:
-    ```bash
-    black .
-    ```
-
-Integrating these tools into your workflow is a best practice that elevates the quality of your codebase.
-
-### The Art of Documentation: Writing Effective Docstrings
+### Writing Effective Docstrings
 
 A docstring is a string literal that serves as the documentation for a module, function, class, or method. They are accessible via Python's built-in `help()` function and are used by various tools to auto-generate documentation.
 
@@ -181,6 +145,18 @@ class Library:
 ```
 This level of documentation makes your code understandable, usable, and maintainable.
 
+### The Python Style Guide (PEP 8)
+
+**PEP 8** is the official style guide for Python code. Adhering to it ensures your code is readable and consistent with the wider Python community. Key guidelines include:
+
+*   **Indentation:** Use 4 spaces per indentation level.
+*   **Line Length:** Keep lines under 80-99 characters.
+*   **Naming Conventions:**
+    *   `snake_case` for functions, methods, and variables (e.g., `find_book_by_title`).
+    *   `PascalCase` for classes (e.g., `class Book:`).
+    *   `UPPER_SNAKE_CASE` for constants (e.g., `MAX_BOOKS_PER_USER = 5`).
+*   **Whitespace:** Use whitespace judiciously to improve readability (e.g., around operators).
+
 ## Jupyter Notebooks for Presentation
 
 A **Jupyter Notebook** (`.ipynb` file) is an interactive, web-based computing environment. It allows you to create and share documents that contain live code, equations, visualizations, and narrative text.
@@ -224,7 +200,109 @@ This separation ensures your core logic is well-organized, testable, and reusabl
 
 Effective software development involves efficient problem-solving. This section outlines a structured approach to finding solutions when you encounter challenges.
 
-### A Hierarchy of Resources
+### Debugging
+
+**Debugging** is the systematic process of finding and fixing errors in your code.
+
+```python
+class Book:
+    """A simple class to represent a book."""
+    def __init__(self, title: str, year: int | str):
+        self.title = title
+        self.publication_year = year
+
+def calculate_average_publication_year(books: list) -> float:
+    """
+    Calculates the average publication year of books published after 1900.
+    Should handle various data issues gracefully.
+    """
+    total_year = 0
+    books_in_sum = 0
+    
+    for book in books:
+        if book.publication_year > 1900:
+            total_year += book.publication_year
+            books_in_sum += 1
+
+    # Calculate the average
+    average_year = total_year / len(books)
+    return average_year
+
+# --- Data for our analysis ---
+book_list = [
+    Book("The Great Gatsby", 1925),
+    Book("To Kill a Mockingbird", 1960),
+    Book("Nineteen Eighty-Four", "1949"),
+    Book("A Brief History of Time", 1888),
+]
+
+empty_list = []
+
+# --- Run the analysis ---
+avg_year = calculate_average_publication_year(book_list)
+print(f"The average publication year is: {avg_year}")
+
+avg_year_empty = calculate_average_publication_year(empty_list)
+print(f"Average for empty list: {avg_year_empty}")
+```
+
+When you run this, it will crash. Let's find out why.
+
+#### Print Debugging
+This is the most basic debugging technique. You insert `print()` statements to inspect the state of your variables at different points in the program's execution.
+
+Running the script produces a `TypeError: '>' not supported between 'str' and 'int'`. The traceback points to `if book.publication_year > 1900:`. The error suggests we are comparing a string to an integer. One of the `publication_year` attributes must be a string. Use `print` to investigate: let's inspect the type of publication_year inside the loop.
+
+```python
+# Inside the for loop
+for book in books:
+    print(f"Processing '{book.title}', Year: {book.publication_year}, Type: {type(book.publication_year)}")
+    if book.publication_year > 1900:
+        # ...
+```
+
+Running the script again will produce:
+
+```
+Processing 'The Great Gatsby', Year: 1925, Type: <class 'int'>
+Processing 'To Kill a Mockingbird', Year: 1960, Type: <class 'int'>
+Processing 'Nineteen Eighty-Four', Year: 1949, Type: <class 'str'>
+... (Crash) ...
+```
+
+This confirms our hypothesis. The year for "Nineteen Eighty-Four" is a string.
+
+#### Using a Visual Debugger with Breakpoints
+
+A much more powerful method is using the integrated debugger in an IDE like VS Code or PyCharm. A debugger allows you to pause your program at specific lines, called **breakpoints**, and inspect the entire program state.
+
+In your editor, click in the gutter to the left of the line number for `if book.publication_year > 1900:`. A red dot will appear. This is your breakpoint. Go to the "Run and Debug" panel in VS Code and start a debug session for the current Python file. The program will run and then pause execution before the line with the breakpoint is executed. Look at the "VARIABLES" panel in the debugger. You can expand the book object and see all its attributes: on the first pause, you will see `book.publication_year` is 1925 (an integer). Press the "Continue" or "Step Over" button. The loop will run again and pause. On the third pause, when `book.title` is "Nineteen Eighty-Four", you will see in the variables panel that `book.publication_year` is "1949" (a string). You have found the type bug without adding a single print statement.
+
+### Linters and Formatters
+
+Manually enforcing style rules is tedious. We can automate this process with two types of tools:
+
+*   **Linter (`flake8`):** Analyzes code to detect style violations and potential programming errors.
+*   **Formatter (`black`):** Automatically reformats your code to comply with a strict, opinionated style guide, ensuring consistency across the entire project.
+
+**Usage:**
+
+1.  Install them into your virtual environment:
+    ```bash
+    pip install flake8 black
+    ```
+2.  Check your project for style issues:
+    ```bash
+    flake8 .
+    ```
+3.  Automatically format your entire project:
+    ```bash
+    black .
+    ```
+
+Integrating these tools into your workflow is a best practice that elevates the quality of your codebase.
+
+### Useful Resources
 
 When faced with an error or a conceptual hurdle, a systematic approach is more effective than random searching. Consider the following hierarchy:
 
@@ -232,25 +310,25 @@ When faced with an error or a conceptual hurdle, a systematic approach is more e
 2.  **Community Knowledge:** Platforms like Stack Overflow where problems have likely been solved before.
 3.  **AI-Powered Assistants:** Large Language Models (LLMs) as an auxiliary tool for code generation and analysis.
 
-### Consulting Official Documentation
+#### Consulting Official Documentation
 
 The documentation for a library (e.g., Pandas, Requests) is the most accurate, comprehensive, and up-to-date resource. Before searching elsewhere, learn to consult the official documentation for function signatures, parameters, and examples.
 
-### Leveraging Community Knowledge (Stack Overflow)
+#### Leveraging Community Knowledge (Stack Overflow)
 
 For specific error messages or implementation challenges, search engines will often lead you to Stack Overflow. This platform is an invaluable archive of problems and solutions. When searching, try to be specific. Copy-pasting the exact error message is often a highly effective strategy.
 
-### Utilizing AI-Powered Assistants (LLMs)
+#### Utilizing AI-Powered Assistants (LLMs)
 
 Models like ChatGPT and GitHub Copilot can be powerful productivity tools, but they must be used with critical judgment. Employ LLMs as a tool to augment your own development process, not as a replacement for critical thinking and problem-solving.
 
-#### Scenarios for Effective Use:
+*Scenarios for effective use:*
 
 *  **Boilerplate Code Generation:** *"Generate a Python function that reads a CSV file into a list of dictionaries using the `csv` module."* This is a standard, well-documented task that models can generate reliably.
 *	**Docstring and Comment Generation:** *"Write a Google-style docstring for the following Python function: [paste function]."* Models excel at pattern recognition and can quickly generate well-formatted documentation, which you should then review for correctness.
 *  **Code and Error Explanation:** *"Explain this Python error: `AttributeError: 'NoneType' object has no attribute 'lower'`."* LLMs can provide clear, contextual explanations of errors that may be opaque to a novice programmer. Keep in mind that they may not address errors given with the usage of most recent library versions: consulting the official documentation should always be the preferred way.
 
-#### Scenarios Requiring Caution:
+*Scenarios Requiring Caution:*
 
 *  **Substituting Foundational Understanding:** Prompting the LLM to write the core logic of your project (e.g., "Write the entire `Library` class for me"). The primary goal of your project is for you to learn. Delegating the core intellectual work to an AI undermines the educational objective and leaves you unable to debug or extend the resulting code.
 *  **Implementing Unintelligible Code:** Copying and pasting a complex code block from an LLM without fully understanding its mechanism. You are responsible for every line of code you submit. If you cannot explain how it works, you cannot effectively debug it when it fails.
