@@ -273,6 +273,7 @@ print(movies_df[['title', 'rating', 'rating_category']].head())
 ## Grouping and Aggregation (`groupby`)
 
 The `groupby` operation follows a **Split-Apply-Combine** pattern:
+
 1.  **Split:** The data is split into groups based on some criteria (e.g., by 'genre' or 'director').
 2.  **Apply:** A function (e.g., `mean`, `sum`, `count`) is applied to each group independently.
 3.  **Combine:** The results are combined into a new data structure.
