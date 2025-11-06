@@ -3,6 +3,8 @@ Resources for the Python module exercise classes of the *Coding for Data Science
 
 Contacts: [sergio.picascia@unimi.it](mailto:sergio.picascia@unimi.it), [stefano.montanelli@unimi.it](mailto:stefano.montanelli@unimi.it)
 
+EXAM REGISTRATION ARE OPEN. Please fill in this [form](https://forms.gle/fsiJq9dr5T7yXoM18) before November 24th to register for the exam.
+
 ## Exam Modality
 As an alternative to the written exam of the Python module, it is possible to submit a project. 
 
