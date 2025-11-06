@@ -37,7 +37,9 @@ A `Series` is a one-dimensional labeled array, capable of holding any data type.
 genres = pd.Series(['Action', 'Comedy', 'Drama', 'Sci-Fi'])
 print(genres)
 ```
+
 **Output:**
+
 ```
 0     Action
 1     Comedy
@@ -45,6 +47,7 @@ print(genres)
 3     Sci-Fi
 dtype: object
 ```
+
 Notice the two components: the **index** (0, 1, 2, 3) on the left and the **values** on the right.
 
 #### `DataFrame`
@@ -60,7 +63,9 @@ data = {
 df = pd.DataFrame(data)
 print(df)
 ```
+
 **Output:**
+
 ```
      title  rating  year
 0  Movie A     8.5  2017
@@ -112,7 +117,9 @@ print(movies_df.head())
 ```python
 movies_df.info()
 ```
+
 **Output Analysis:**
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 12 entries, 0 to 11
@@ -134,6 +141,7 @@ Data columns (total 12 columns):
 dtypes: float64(2), int64(5), object(5)
 memory usage: 1.3+ KB
 ```
+
 From `.info()`, we immediately identify a potential issue: `revenue_millions` has only 11 non-null values out of 12 entries. This indicates one missing value.
 
 **`df.describe()`**: Generates descriptive statistics for the numerical columns.
@@ -141,9 +149,11 @@ From `.info()`, we immediately identify a potential issue: `revenue_millions` ha
 ```python
 print(movies_df.describe())
 ```
+
 This gives us the count, mean, standard deviation, min, max, and quartile values for each numerical column. It's a great way to get a feel for the distribution of the data.
 
 **`df.shape`**: Returns a tuple representing the dimensionality (rows, columns).
+
 ```python
 print(f"Dataset dimensions: {movies_df.shape}")
 ```
@@ -153,20 +163,25 @@ print(f"Dataset dimensions: {movies_df.shape}")
 Pandas offers a rich set of methods for selecting subsets of your data.
 
 #### Selecting a Single Column
+
 This returns a `Series`.
+
 ```python
 titles = movies_df['title']
 print(titles.head())
 ```
 
 #### Selecting Multiple Columns
+
 Pass a list of column names. This returns a new `DataFrame`.
+
 ```python
 subset = movies_df[['title', 'director', 'rating', 'revenue_millions']]
 print(subset.head())
 ```
 
 #### Row Selection: `.loc` and `.iloc`
+
 *   **`.loc`** selects by **label** (index name, column name).
 *   **`.iloc`** selects by **integer position**.
 
@@ -214,11 +229,13 @@ print(high_rated_action[['title', 'genre', 'rating']])
 Real-world data is rarely clean. We already identified a missing value in the `revenue_millions` column.
 
 #### Finding Missing Values
+
 The `.isnull()` (or `.isna()`) method returns a boolean DataFrame. We can chain it with `.sum()` to get a count of `NaN`s per column.
 
 ```python
 print(movies_df.isnull().sum())
 ```
+
 This confirms one missing value in `revenue_millions`.
 
 #### Handling Missing Values
@@ -244,6 +261,7 @@ movies_df.info()
 ## Data Manipulation
 
 #### Creating New Columns
+
 We can create new columns based on calculations from existing ones. Let's create a `rating_per_million_votes` column to normalize the rating score.
 
 ```python
