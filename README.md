@@ -33,9 +33,86 @@ The submission of a project is possible only by the deadline of November 30, 202
 - Oct 27th, 14:30-16:00 - *Data Manipulation*
 - Nov 3rd, 16:00-17:30 - *Scientific Computing*
 - Nov 10th, 16:00-17:30 - *Data Visualisation*
-- Nov 17th, 14:30-16:00 - *Dashboard*
+- Nov 17th, 14:30-16:00 - *Web Application*
+- Dec 3rd, 9:00 - [*First Group Exam*](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWYwZGNiYjYtYjViMC00MDM3LWJlYWYtOWVjNWJhN2FjMzlh%40thread.v2/0?context=%7b%22Tid%22%3a%2213b55eef-7018-4674-a3d7-cc0db06d545c%22%2c%22Oid%22%3a%22162f7b34-50be-49a1-9032-cfab1311b202%22%7d)
+- Dec 4th, 9:00 - [*Second Group Exam*](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTYzZGE0NTctYmU3My00MWU5LTgzMTEtMzEyZmM3YzI1Nzdm%40thread.v2/0?context=%7b%22Tid%22%3a%2213b55eef-7018-4674-a3d7-cc0db06d545c%22%2c%22Oid%22%3a%22162f7b34-50be-49a1-9032-cfab1311b202%22%7d)
 
-**NOTE**: this is a tentative outline and and may be subject to changes.
+*First Group Students*
+
+69213A	Başak Doğa Kayalar
+71721A	Mirjalol Eshmurodov
+67577A	Ulugbek Nortojiev
+C06395	fabrizio sabatino
+68848A	Le Hong Vy Ngoc
+84791A	Gultaj Jafarova
+67527A	Seyedmohammadali Hassanzadeh
+69266A	Alessandro Chiesurin 
+69003A	SACHIN SHARMA
+67509A	Mahdieh Abvali
+75035A	Timur Brevnov
+67626A	Al Rafi Sayed
+71550A	Riccardo Mantegazza
+69017A	Jaroslava Adamová
+69199A	Nitin Yadav
+69110A	Davide Toto Brocchi
+67499A	Mohammad Ali Noroozshad
+71277A	Giorgia Adamo
+69230A	Thi Thu Hue Bui
+82434A	Stela Mile
+73722A	Gaukhar Zhanalina
+70282A	Laura Ferri
+67582A	Saba shafiei sabet
+67845A	Sami Hnaien
+51915A	Arezou Homaei fasih
+71245A	Filippo Lo Presti
+53056A	Alberto Polato
+73998A	Andrea Vaselli
+71055A	Paola Pesenti
+67434A	Mohamed Yousif
+55349A	Duy My Phuong Doan
+69196A	Marta Macrì
+68488A	Shreshth Bharadwaj
+84697A	Sara Gheisar
+73424A	Mohammed Vohra
+70806A	Arevik Osipyan
+
+*Second Group Students*
+
+68236A	Akbar Gafurov
+67492A	Guofang Li
+75736A	Gabriela Simon de Cenco
+80408A	Mohamed Dhia Othmani
+985650	Tommaso Manganiello 
+72620A	Harshith Raj Boddu
+49117A	Gloria Villa
+73081A	Tushar Randhir Sinha
+81757A	Eleonora Pozzi
+70193A	Behrad Sadeghi
+V12919	Victor Blasco Garcia
+73969A	Amaliia Davletbaeva
+73954A	miguel banez
+84235A	Riccardo Gaglio
+76720A	Aisha Zhanibek
+67464A	Amir Reza Shahrokni
+70150A	Zlata Dolia
+68845A	Gaspar Zamorano
+65792A	FATEMEH MOAYEDIRAD
+72929A	Marco Cella
+72280A	Andis Bara
+82077A	Giulia Bracaglia
+30309A	Abdupattoev Sardorbek
+78513A	Etyang Rhodine Bendict
+70681A	Philipp Neglein 
+70023A	Amal Swiba Thaniyullathil
+73644A	Sofia Cipolloni
+83167A	Saba Jahan Tighi
+68491A	Sachin Tiwari
+73963A	Leonardo Pio Cosenza
+ 71972A	Pardis Attarsadegh Somehsaraei
+53453A	Fabio Anchisi
+82459A	Elyorbek Temirov
+72820A	Mir Reza Negahban Alvar
+71406A	Aya Saadi
 
 #### Important Dates
 
