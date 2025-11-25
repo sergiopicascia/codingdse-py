@@ -211,6 +211,7 @@ As your app grows, you might want to organize it into multiple pages. Streamlit 
 Let's restructure our app:
 
 **Directory Structure:**
+
 ```
 .
 ├── data/
@@ -222,6 +223,7 @@ Let's restructure our app:
 ```
 
 **`app.py` (Home Page):**
+
 ```python
 import streamlit as st
 
@@ -233,10 +235,13 @@ st.sidebar.success("Select an analysis page above.")
 ```
 
 **`pages/01_📈_Stock_Analysis.py`:**
+
 *This will be the main interactive script we just built.*
 
 **`pages/02_📊_Company_Comparison.py`:**
+
 *A new page for a different type of visualization.*
+
 ```python
 import streamlit as st
 import pandas as pd
