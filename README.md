@@ -33,7 +33,7 @@ The submission of a project is possible only by the deadline of November 30, 202
 - Oct 27th, 14:30-16:00 - *Data Manipulation*
 - Nov 3rd, 16:00-17:30 - *Scientific Computing*
 - Nov 10th, 16:00-17:30 - *Data Visualisation*
-- Nov 17th, 16:00-17:30 - *Dashboard*
+- Nov 17th, 14:30-16:00 - *Dashboard*
 
 **NOTE**: this is a tentative outline and and may be subject to changes.
 
