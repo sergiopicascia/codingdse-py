@@ -81,8 +81,8 @@ $ echo $PATH
 /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Find out the exact location of a program
-$ which echo
-/bin/echo
+$ which python3
+/usr/bin/python3
 ```
 
 When you type `date`, the shell searches through each directory in `$PATH` (separated by colons) until it finds an executable file named `date`.
@@ -118,11 +118,10 @@ A **path** is the address of a file or directory.
 *   `cd` (Change Directory): Moves you to a different directory.
 
     ```bash
-    # Move to an absolute path
-    $ cd /etc
-
-    # Move to a directory inside your current one
+    # Move to a directory using its absolute path
     $ cd /home/student/projects
+
+    # Move to a directory inside your current one, using a relative path
     $ cd my_project
     ```
 
@@ -189,6 +188,10 @@ $ man ls
 
     ```bash
     $ mkdir my_new_project
+
+    # -p (parents) creates all the missing directories in the path,
+    # and does not complain if they already exist
+    $ mkdir -p my_new_project/data/raw
     ```
 
 *   `touch`: creates a new, empty file.
@@ -230,8 +233,8 @@ $ man ls
 *   `less`: lets you view a file one page at a time. Use arrow keys to navigate and `q` to quit. Best for large files.
 
 ```bash
-$ cat important_notes.md
-$ less /var/log/syslog
+$ cat my_new_project/important_notes.md
+$ less my_new_project/important_notes.md
 ```
 
 ### I/O Redirection: `>` and `<`
@@ -272,7 +275,9 @@ A pipe `|` lets you take the output of one command and use it as the input for a
 $ ls -l / | tail -n 1
 ```
 
-When you don't know whether a command has been successfully executed or not, you can check the exit code of the last command.
+### Exit Codes
+
+Every command returns an **exit code** when it finishes. When you don't know whether a command has been successfully executed or not, you can check the exit code of the last command with `$?`.
 
 ```bash
 $ ls non_existent_directory
@@ -283,7 +288,7 @@ $ echo $?
 2
 ```
 
-An exit code of `0` means success. Any other number means an error occurred.
+An exit code of `0` means success. Any other number means an error occurred: the exact number depends on the program and on the OS (e.g., the same `ls` error returns `1` on macOS).
 
 ### Wildcards (Globbing)
 
@@ -340,9 +345,6 @@ Starting project: MyAwesomeProject
 Let's take this Python script, save it as `reverser.py`:
 
 ```python
-#!/usr/bin/env python3
-# The line above is called a "shebang". It tells the shell what program to use to run this script.
-
 import sys
 
 # sys.argv is a list of command-line arguments.
@@ -351,24 +353,70 @@ for arg in reversed(sys.argv[1:]):
     print(arg)
 ```
 
-**How to run it:**
+To run it, call the Python interpreter (a program like any other, found through `$PATH`) and pass it the path of the script, followed by the script's own arguments:
 
-1.  **Make it executable:** right now, the OS sees this as a plain text file. We need to give it "execute" permission.
+```bash
+$ python3 reverser.py hello world 2026
+2026
+world
+hello
+```
 
-    ```bash
-    # chmod (change mode) +x (add executable permission)
-    $ chmod +x reverser.py
-    ```
+> **NOTE**: depending on your OS and installation, the interpreter may be called `python3` or `python` (on Windows, also `py`). Use `which python3` or `which python` to find out which one you have.
 
-2.  **Run it:** since the current directory (`.`) is usually not in your `$PATH` for security reasons, you have to tell the shell exactly where it is.
+## Putting It All Together
 
-    ```bash
-    # Run the script in the current directory and pass it some arguments
-    $ ./reverser.py hello world 2023
-    2023
-    world
-    hello
-    ```
+Let's use what we have seen so far to create the skeleton of a project, like the one of the [vgrank](https://github.com/sergiopicascia/vgrank) example project. Try it with the name of your own project!
+
+```bash
+# Start from your home directory, and create a folder for all your projects
+$ cd ~
+$ mkdir -p projects
+$ cd projects
+
+# Create the project folder and its subdirectories in one go
+$ mkdir -p vgrank/data vgrank/vgrank vgrank/notebooks
+$ cd vgrank
+
+# Create the main files of the project
+$ echo "# VideoGame Ranking" > README.md
+$ echo "Rate video games and build your personal ranking." >> README.md
+$ touch requirements.txt
+$ echo 'print("Hello from vgrank!")' > vgrank/main.py
+
+# Check the result
+$ ls -R
+README.md  data  notebooks  requirements.txt  vgrank
+
+./data:
+
+./notebooks:
+
+./vgrank:
+main.py
+
+$ cat README.md
+# VideoGame Ranking
+Rate video games and build your personal ranking.
+
+# Run the script from the root of the project
+$ python3 vgrank/main.py
+Hello from vgrank!
+```
+
+The result is the following structure:
+
+```
+vgrank/
+├── README.md           # what the project is about, and how to run it
+├── requirements.txt    # the Python libraries needed by the project
+├── data/               # the datasets
+├── vgrank/             # the source code, with the same name as the project
+│   └── main.py
+└── notebooks/          # the notebook presenting the project
+```
+
+> **NOTE**: the shell also offers a shortcut, called *brace expansion*, to write the `mkdir` command above: `mkdir -p vgrank/{data,vgrank,notebooks}`.
 
 ## Quality of Life: Shortcuts and Tools
 
@@ -392,6 +440,16 @@ For now, `nano` is your best bet.
 
 ```bash
 $ nano my_file.txt
+```
+
+For writing the code of your project, you will most likely use an IDE (**I**ntegrated **D**evelopment **E**nvironment), which can also be opened from the shell:
+
+*   **VS Code**: `code .` opens the current directory. On macOS, you first need to enable the command: open the Command Palette (`Cmd+Shift+P`) and run *Shell Command: Install 'code' command in PATH*.
+*   **PyCharm**: `pycharm .` opens the current directory, once the command-line launcher is enabled (e.g., through the *JetBrains Toolbox* settings, under *Shell scripts*).
+
+```bash
+$ cd ~/projects/vgrank
+$ code .
 ```
 
 ### Working on Remote Machines
