@@ -207,3 +207,9 @@ marimo/_lsp/
 __marimo__/
 
 .DS_Store
+
+# Course materials not to be published
+wooclap/
+
+# Editor files
+.vscode/
