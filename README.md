@@ -27,7 +27,7 @@ Students not interested in submitting a project must take the written exam in an
 - Thu, Oct 15th, 16:30-18:30 - *Course and Projects Introduction*
 - Mon, Oct 19th, 14:30-18:30 - *Project Organisation*
 - Thu, Oct 29th, 16:30-18:30 - *Data Input/Output*
-- Mon, Nov 2nd, 16:30-18:30 - *Data Manipulation*
+- Thu, Nov 5th, 16:30-18:30 - *Data Manipulation*
 - Mon, Nov 9th, 16:30-18:30 - *Scientific Computing*
 - Mon, Nov 16th, 16:30-18:30 - *Data Visualisation*
 - Mon, Nov 23rd, 16:30-18:30 - *Dashboard*
