@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="346" viewBox="0 0 980 346" role="img" aria-labelledby="title desc">
+  <title id="title">Two branches of a project, merged together</title>
+  <desc id="desc">The history of vgrank continues from the commit Fix weights of the overall score. A new branch, add-plots, receives two commits: Add bar chart of the ranking, and Add histogram of the scores. Meanwhile, the main branch receives the commit Fix dependency versions. Finally, add-plots is merged into main with the commit Merge branch add-plots, which combines the two lines of development.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #1f2328; }
+    .hash { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; fill: #59636e; }
+    .label { font-size: 15px; }
+    .annot { font-size: 14px; font-style: italic; fill: #59636e; }
+    .tag { font-size: 14px; font-weight: 600; fill: #ffffff; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#818b98"/>
+    </marker>
+  </defs>
+
+  <!-- White background, so that the figure is readable also in dark mode -->
+  <rect x="0.5" y="0.5" width="979" height="345" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+
+  <!-- Lines of development: main (blue) and add-plots (purple) -->
+  <line x1="30" y1="96" x2="180" y2="96" stroke="#a8cbf7" stroke-width="3" stroke-dasharray="5 6"/>
+  <line x1="180" y1="96" x2="840" y2="96" stroke="#0969da" stroke-width="3"/>
+  <path d="M180 96C180 157 340 157 340 218H660C660 157 840 157 840 96" fill="none" stroke="#8250df" stroke-width="3"/>
+  <text x="276" y="151" class="annot">new branch</text>
+  <text x="742" y="151" text-anchor="end" class="annot">merge</text>
+
+  <!-- Earlier commits (see the previous figure) -->
+  <circle cx="58" cy="96" r="8" fill="#a8cbf7" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="114" cy="96" r="8" fill="#a8cbf7" stroke="#ffffff" stroke-width="3"/>
+
+  <!-- Fix weights of the overall score -->
+  <g>
+    <circle cx="180" cy="96" r="10" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <text x="180" y="54" text-anchor="middle" class="label">Fix weights of the overall score</text>
+    <text x="180" y="75" text-anchor="middle" class="hash">812dece</text>
+  </g>
+  <!-- Add bar chart of the ranking -->
+  <g>
+    <circle cx="340" cy="218" r="10" fill="#8250df" stroke="#ffffff" stroke-width="3"/>
+    <text x="340" y="252" text-anchor="middle" class="hash">3ce1f20</text>
+    <text x="340" y="273" text-anchor="middle" class="label">Add bar chart of the ranking</text>
+  </g>
+  <!-- Fix dependency versions -->
+  <g>
+    <circle cx="500" cy="96" r="10" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <text x="500" y="54" text-anchor="middle" class="label">Fix dependency versions</text>
+    <text x="500" y="75" text-anchor="middle" class="hash">80ecbd7</text>
+  </g>
+  <!-- Add histogram of the scores -->
+  <g>
+    <circle cx="660" cy="218" r="10" fill="#8250df" stroke="#ffffff" stroke-width="3"/>
+    <text x="660" y="252" text-anchor="middle" class="hash">d90f806</text>
+    <text x="660" y="273" text-anchor="middle" class="label">Add histogram of the scores</text>
+  </g>
+  <!-- Merge branch 'add-plots' -->
+  <g>
+    <circle cx="840" cy="96" r="10" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <text x="840" y="54" text-anchor="middle" class="label">Merge branch 'add-plots'</text>
+    <text x="840" y="75" text-anchor="middle" class="hash">aedae7c</text>
+  </g>
+
+  <!-- Branches: labels that point to the last commit of each line -->
+  <g>
+    <rect x="862" y="84" width="58" height="24" rx="12" fill="#0969da"/>
+    <text x="891" y="100.5" text-anchor="middle" class="tag">main</text>
+    <rect x="682" y="206" width="92" height="24" rx="12" fill="#8250df"/>
+    <text x="728" y="222.5" text-anchor="middle" class="tag">add-plots</text>
+  </g>
+
+  <!-- Time axis -->
+  <line x1="40" y1="310" x2="928" y2="310" stroke="#818b98" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="936" y="314.5" class="annot">time</text>
+
+</svg>

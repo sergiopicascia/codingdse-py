@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="444" viewBox="0 0 980 444" role="img" aria-labelledby="title desc">
+  <title id="title">The history of a project as a sequence of snapshots</title>
+  <desc id="desc">Four commits of vgrank, from left to right: Set up project skeleton, Add scoring rules, Add Game class, Fix weights of the overall score. Each commit is a snapshot that contains all the files of the project; the files highlighted in each snapshot are the ones added or changed by that commit, the others are unchanged and reused from the previous snapshot.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #1f2328; }
+    .hash { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; fill: #59636e; }
+    .msg { font-size: 15px; font-weight: 600; }
+    .file { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
+    .unchanged { fill: #818b98; }
+    .note { font-size: 14px; fill: #59636e; }
+    .annot { font-size: 14px; font-style: italic; fill: #59636e; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#818b98"/>
+    </marker>
+  </defs>
+
+  <!-- White background, so that the figure is readable also in dark mode -->
+  <rect x="0.5" y="0.5" width="979" height="443" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+
+  <!-- The history: one dot per commit -->
+  <line x1="139" y1="44" x2="841" y2="44" stroke="#0969da" stroke-width="3"/>
+
+  <!-- Commit 1: Set up project skeleton -->
+  <g>
+    <line x1="139" y1="44" x2="139" y2="84" stroke="#0969da" stroke-width="2" stroke-opacity="0.45"/>
+    <circle cx="139" cy="44" r="9" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <rect x="40" y="84" width="198" height="262" rx="10" fill="#f6f8fa"/>
+    <path d="M40 94a10 10 0 0 1 10 -10h178a10 10 0 0 1 10 10v76h-198z" fill="#ffffff"/>
+    <line x1="40" y1="170" x2="238" y2="170" stroke="#d0d7de"/>
+    <rect x="40" y="84" width="198" height="262" rx="10" fill="none" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="54" y="109" class="hash">5d94853</text>
+    <text x="54" y="133" class="msg">Set up project</text>
+    <text x="54" y="153" class="msg">skeleton</text>
+    <rect x="52" y="182" width="174" height="24" rx="6" fill="#dafbe1" stroke="#1a7f37"/>
+    <g stroke="#1a7f37" stroke-width="1.5" fill="none"><rect x="61" y="188" width="12" height="12" rx="3"/><path d="M64 194h6M67 191v6"/></g>
+    <text x="81" y="198.5" class="file">README.md</text>
+    <rect x="52" y="214" width="174" height="24" rx="6" fill="#dafbe1" stroke="#1a7f37"/>
+    <g stroke="#1a7f37" stroke-width="1.5" fill="none"><rect x="61" y="220" width="12" height="12" rx="3"/><path d="M64 226h6M67 223v6"/></g>
+    <text x="81" y="230.5" class="file">requirements.txt</text>
+    <rect x="52" y="246" width="174" height="24" rx="6" fill="#dafbe1" stroke="#1a7f37"/>
+    <g stroke="#1a7f37" stroke-width="1.5" fill="none"><rect x="61" y="252" width="12" height="12" rx="3"/><path d="M64 258h6M67 255v6"/></g>
+    <text x="81" y="262.5" class="file">vgrank/main.py</text>
+  </g>
+
+  <!-- Commit 2: Add scoring rules -->
+  <g>
+    <line x1="373" y1="44" x2="373" y2="84" stroke="#0969da" stroke-width="2" stroke-opacity="0.45"/>
+    <circle cx="373" cy="44" r="9" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <rect x="274" y="84" width="198" height="262" rx="10" fill="#f6f8fa"/>
+    <path d="M274 94a10 10 0 0 1 10 -10h178a10 10 0 0 1 10 10v76h-198z" fill="#ffffff"/>
+    <line x1="274" y1="170" x2="472" y2="170" stroke="#d0d7de"/>
+    <rect x="274" y="84" width="198" height="262" rx="10" fill="none" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="288" y="109" class="hash">d50590c</text>
+    <text x="288" y="133" class="msg">Add scoring rules</text>
+    <rect x="286" y="182" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="315" y="198.5" class="file unchanged">README.md</text>
+    <rect x="286" y="214" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="315" y="230.5" class="file unchanged">requirements.txt</text>
+    <rect x="286" y="246" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="315" y="262.5" class="file unchanged">vgrank/main.py</text>
+    <rect x="286" y="278" width="174" height="24" rx="6" fill="#dafbe1" stroke="#1a7f37"/>
+    <g stroke="#1a7f37" stroke-width="1.5" fill="none"><rect x="295" y="284" width="12" height="12" rx="3"/><path d="M298 290h6M301 287v6"/></g>
+    <text x="315" y="294.5" class="file">vgrank/scoring.py</text>
+  </g>
+
+  <!-- Commit 3: Add Game class -->
+  <g>
+    <line x1="607" y1="44" x2="607" y2="84" stroke="#0969da" stroke-width="2" stroke-opacity="0.45"/>
+    <circle cx="607" cy="44" r="9" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <rect x="508" y="84" width="198" height="262" rx="10" fill="#f6f8fa"/>
+    <path d="M508 94a10 10 0 0 1 10 -10h178a10 10 0 0 1 10 10v76h-198z" fill="#ffffff"/>
+    <line x1="508" y1="170" x2="706" y2="170" stroke="#d0d7de"/>
+    <rect x="508" y="84" width="198" height="262" rx="10" fill="none" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="522" y="109" class="hash">03f8c48</text>
+    <text x="522" y="133" class="msg">Add Game class</text>
+    <rect x="520" y="182" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="549" y="198.5" class="file unchanged">README.md</text>
+    <rect x="520" y="214" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="549" y="230.5" class="file unchanged">requirements.txt</text>
+    <rect x="520" y="246" width="174" height="24" rx="6" fill="#fff1e5" stroke="#bc4c00"/>
+    <rect x="529" y="252" width="12" height="12" rx="3" stroke="#bc4c00" stroke-width="1.5" fill="none"/><circle cx="535" cy="258" r="2.25" fill="#bc4c00"/>
+    <text x="549" y="262.5" class="file">vgrank/main.py</text>
+    <rect x="520" y="278" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="549" y="294.5" class="file unchanged">vgrank/scoring.py</text>
+    <rect x="520" y="310" width="174" height="24" rx="6" fill="#dafbe1" stroke="#1a7f37"/>
+    <g stroke="#1a7f37" stroke-width="1.5" fill="none"><rect x="529" y="316" width="12" height="12" rx="3"/><path d="M532 322h6M535 319v6"/></g>
+    <text x="549" y="326.5" class="file">vgrank/models.py</text>
+  </g>
+
+  <!-- Commit 4: Fix weights of the overall score -->
+  <g>
+    <line x1="841" y1="44" x2="841" y2="84" stroke="#0969da" stroke-width="2" stroke-opacity="0.45"/>
+    <circle cx="841" cy="44" r="9" fill="#0969da" stroke="#ffffff" stroke-width="3"/>
+    <rect x="742" y="84" width="198" height="262" rx="10" fill="#f6f8fa"/>
+    <path d="M742 94a10 10 0 0 1 10 -10h178a10 10 0 0 1 10 10v76h-198z" fill="#ffffff"/>
+    <line x1="742" y1="170" x2="940" y2="170" stroke="#d0d7de"/>
+    <rect x="742" y="84" width="198" height="262" rx="10" fill="none" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="756" y="109" class="hash">812dece</text>
+    <text x="756" y="133" class="msg">Fix weights of the</text>
+    <text x="756" y="153" class="msg">overall score</text>
+    <rect x="754" y="182" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="783" y="198.5" class="file unchanged">README.md</text>
+    <rect x="754" y="214" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="783" y="230.5" class="file unchanged">requirements.txt</text>
+    <rect x="754" y="246" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="783" y="262.5" class="file unchanged">vgrank/main.py</text>
+    <rect x="754" y="278" width="174" height="24" rx="6" fill="#fff1e5" stroke="#bc4c00"/>
+    <rect x="763" y="284" width="12" height="12" rx="3" stroke="#bc4c00" stroke-width="1.5" fill="none"/><circle cx="769" cy="290" r="2.25" fill="#bc4c00"/>
+    <text x="783" y="294.5" class="file">vgrank/scoring.py</text>
+    <rect x="754" y="310" width="174" height="24" rx="6" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="783" y="326.5" class="file unchanged">vgrank/models.py</text>
+  </g>
+
+  <!-- Time axis -->
+  <line x1="40" y1="376" x2="928" y2="376" stroke="#818b98" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="936" y="380.5" class="annot">time</text>
+
+  <!-- Legend -->
+  <g>
+    <g stroke="#1a7f37" stroke-width="1.5" fill="none"><rect x="178" y="403.5" width="12" height="12" rx="3"/><path d="M181 409.5h6M184 406.5v6"/></g>
+    <text x="197" y="414" class="note">new file</text>
+    <rect x="290" y="403.5" width="12" height="12" rx="3" stroke="#bc4c00" stroke-width="1.5" fill="none"/><circle cx="296" cy="409.5" r="2.25" fill="#bc4c00"/>
+    <text x="309" y="414" class="note">changed file</text>
+    <rect x="430" y="401" width="26" height="17" rx="5" fill="#ffffff" stroke="#afb8c1" stroke-dasharray="4 3"/>
+    <text x="464" y="414" class="note">unchanged file, reused from the previous snapshot</text>
+  </g>
+</svg>
