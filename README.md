@@ -16,7 +16,7 @@ The final version of the project must be submitted by **November 30th, 2026** (f
 The students that submit a project will be called for a discussion on **December 1st, 2nd or 3rd, 2026**.
 
 After the discussion, the student receives a grade that is valid as a result of the Python module.
-If not satisfied with the result, a student must immediately reject the project grade and take the written exam of the Python module in the ordinary exam sessions, starting from **December 9th, 2026**.
+If not satisfied with the result, a student must immediately reject the project grade and take the written exam of the Python module in the ordinary exam sessions, starting from **January, 2027**.
 
 Students not interested in submitting a project must take the written exam in any ordinary exam session.
 
