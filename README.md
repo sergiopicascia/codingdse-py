@@ -159,7 +159,7 @@ The project can only be submitted and discussed in this session. If you miss it,
 No. The Wooclap sessions are only meant to check whether the topics of the previous lecture are clear, both for you and for the instructor. They do not affect your evaluation in any way.
 
 ##### *What about the usage of Large Language Models (LLMs) for code generation? Which is the policy on this regard?*
-You are permitted to use AI-powered tools like LLMs (e.g. ChatGPT, Claude, Gemini) to assist you with your project. We will discuss how to use them effectively during the course; however, we have some recommendations.
+You are permitted to use AI-powered tools like LLMs (e.g. ChatGPT, Claude, Gemini) to assist you with your project. We will discuss how to use them effectively during the course (see the lecture on [Coding with LLMs](lectures/5-coding-with-llms.md)); however, we have some recommendations.
 
 We encourage you to use these tools as assistants: for instance, to suggest alternative ways to approach a problem, to identify some possible issues within your code or to generate template code; do not use them to generate entire scripts or the core logic of your analysis.
 
